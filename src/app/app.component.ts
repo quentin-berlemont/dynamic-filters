@@ -2,9 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'dynamic-filters';
+  filters: Array<string> = [
+    'period'
+  ];
+  values: any = {};
+
+  handleFilter(values: any) {
+    this.values = values;
+  }
+
 }

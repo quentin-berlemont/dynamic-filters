@@ -1,0 +1,27 @@
+<fieldset ngModelGroup="period">
+
+  <div class="form-group">
+    <label for="startDate">From</label>
+    <div class="input-group">
+      <input id="startDate" class="form-control" placeholder="yyyy-mm-dd" name="startDate" ngbDatepicker #startDatepicker="ngbDatepicker" ngModel>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="startDatepicker.toggle()" type="button">
+          <span class="fa fa-calendar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">To</label>
+    <div class="input-group">
+      <input id="endDate" class="form-control" placeholder="yyyy-mm-dd" name="endDate" ngbDatepicker #endDatepicker="ngbDatepicker" ngModel>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="endDatepicker.toggle()" type="button">
+          <span class="fa fa-calendar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</fieldset>

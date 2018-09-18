@@ -1,0 +1,6 @@
+<button class="btn btn-lg btn-outline-primary" (click)="openFilterModal()">Filter</button>
+
+<div>
+    <span *ngFor="let value of values | keyvalue" class="badge badge-pill badge-primary" (click)="openFilterModal(value.key)">{{ value.key }} <i class="fa fa-pencil"></i></span>
+</div>
+

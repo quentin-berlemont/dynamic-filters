@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">Filters</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </button>
+</div>
+
+<form #filterForm="ngForm" (ngSubmit)="handleSubmit(filterForm.value)">
+  <div class="modal-body">
+      <ngb-tabset #tabset="ngbTabset">
+          <ngb-tab *ngFor="let filter of filters" [id]="filter.id" [title]="filter.title">
+            <ng-template ngbTabContent>
+              <ng-container *ngComponentOutlet="filter.component"></ng-container>
+            </ng-template>
+          </ngb-tab>
+      </ngb-tabset>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="handleReset()">Reset</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+
+</form>
